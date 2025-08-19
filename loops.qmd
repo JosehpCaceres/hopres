@@ -229,7 +229,7 @@ rueda <- c("DD", "7", "BBB", "BB", "B", "C", "0")
 
 Asegúrese de agregar el argumento `stringsAsFactors = FALSE` a su llamada `expand.grid`; de lo contrario, `expand.grid` guardará las combinaciones como factores, una elección desafortunada que interrumpirá la función `puntuacion`
 
-*Solución.* Para crear un data frame de cada combinación de _tres_ símbolos, debe ejecutar `expand.grid` y darle _tres_ copias de `wheel`. El resultado será un data frame con 343 filas, una para cada combinación única de tres símbolos de ranura:
+*Solución.* Para crear un data frame de cada combinación de _tres_ símbolos, debe ejecutar `expand.grid` y darle _tres_ copias de `rueda`. El resultado será un data frame con 343 filas, una para cada combinación única de tres símbolos de ranura:
 
 ``` r
 combos <- expand.grid(rueda, rueda, rueda, stringsAsFactors = FALSE)
