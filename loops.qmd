@@ -494,7 +494,7 @@ Si desea un desafío más modesto, estudie el siguiente código de `puntuacion`.
 ``` r
 puntuacion <- function(simbolos) {
   
-  diamantez <- sum(simbolos == "DD")
+  diamantes <- sum(simbolos == "DD")
   cerezas <- sum(simbolos == "C")
   
   # identificar caso
@@ -504,13 +504,13 @@ puntuacion <- function(simbolos) {
   tragamonedas <- simbolos[simbolos != "DD"]
   iguales <- length(unique(tragamonedas)) == 1
   barras <- tragamonedas %in% c("B", "BB", "BBB")
-
+  
   # asignar premio
   if (diamantes == 3) {
     premio <- 100
   } else if (iguales) {
     pagos <- c("7" = 80, "BBB" = 40, "BB" = 25,
-      "B" = 10, "C" = 10, "0" = 0)
+               "B" = 10, "C" = 10, "0" = 0)
     premio <- unname(pagos[tragamonedas[1]])
   } else if (all(barras)) {
     premio <- 5
